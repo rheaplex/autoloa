@@ -1,0 +1,32 @@
+autoloa
+=======
+
+Generate pantheons of possible spirits.
+
+The name is for historical reasons within cyberculture.
+
+Installation
+------------
+
+You'll need NLTK with WordNet support installed.
+
+Then once and only once run:
+
+    python make_word_lists.py
+
+Copy config.json.template to config.json, then fill it out with the details of
+the tumblr blog you have created for this purpose:
+
+    cp config.json.template config.json
+    emacs config.json
+
+Running
+-------
+
+Once you have created the word lists and set up the configuration file, you can
+call the main script:
+
+    python autloa.py
+
+this will create several posts in the tumblr blog mentioned in the configuration
+file.
