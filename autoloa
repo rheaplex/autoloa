@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# -*- language: python; coding: utf-8 -*-
 # autoloa.py - Automatic pantheon generation.
 # Copyright 2014 - 2015 Rob Myers <rob@robmyers.org>
 #
@@ -15,13 +16,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import datetime, hashlib, json, math, pickle, random
+import datetime, hashlib, json, math, pickle, random, sys
 import pytumblr
 
-with open('./config.json') as credentials_file:
+if len(sys.argv) != 3:
+    print "Usage: autoloa <config.json> <word_lists.pickle>"
+    sys.exit(1)
+
+with open(sys.argv[1]) as credentials_file:
     config = json.load(credentials_file)
 
-with open('word_lists.pickle') as infile:
+with open(sys.argv[2]) as infile:
     words = pickle.load(infile)
 
 # https://cmloegcmluin.wordpress.com/2012/11/10/relative-frequencies-of-english-phonemes/
