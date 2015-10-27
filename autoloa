@@ -42,5 +42,5 @@ def postDescription(name, description):
 if __name__ == '__main__':
     now = datetime.datetime.now().isoformat()
     entities = descriptions.describePantheon(now)
-    #for entity in entities:
-    postDescription(entities[0][0], entities[0][1])
+    for entity in entities:
+        postDescription(entity[0], entity[1])
